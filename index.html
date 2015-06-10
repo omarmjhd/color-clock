@@ -7,18 +7,37 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <script src="js/clock.js"></script>
 </head>
+
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        alert("Your location is: " + geoplugin_countryName() + ", " + geoplugin_region() + ", " + geoplugin_city());
+
+        var country = geoplugin_countryName();
+        $("#country").append("<option value='1' selected>"+country+"</option>");
+
+        var zone = geoplugin_region();
+        $("#zone").append("<option value='1' selected>"+zone+"</option>");
+
+        var district = geoplugin_city();
+        $("#district").append("<option value='1' selected>"+district+"</option>");
+    });
+</script>
+
+
 <body onLoad="clock()">
     <table class="center">
         <tr>
             <td height="100%" width="100%" align="center" valign="middle">
                 <a class="h1" id="hex" href=""></a>
                 <br>
-                <a class = "h2" id="time"></a> <!-- add link to a world clock of that location?  -->
+                <br>
+                <a class="h2" id="time"></a> <!-- add link to a world clock of that location?  -->
                 <br>
                 <br>
                 <br>
-                <a class="fa fa-github fa-2x" href="https://github.com/omarmjhd/color-clock"></a>
+                <a class="fa fa-github fa-3x" href="https://github.com/omarmjhd/color-clock"></a>
             </td>
+
         </tr>
     </table>
 </body>
