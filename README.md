@@ -10,4 +10,4 @@ This is a simple page that changes the background color using JavaScript based o
 * JavaScript 
 * jQuery
 
-The page is live and can be accessed at: [Color Clock](http://http://omarmjhd.me/color-clock/)
+The page is live and can be accessed at: [Color Clock](http://omarmjhd.me/color-clock/)
