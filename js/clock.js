@@ -28,8 +28,14 @@ function clock() { //TODO: refactor to break down into subfunctions
     if (hoursTwelve > 12) {
 
         hoursTwelve -= 12;
-        hoursTwelve = "0" + hoursTwelve;
-        ampm = "PM"
+
+        if (hoursTwelve < 10) {
+
+            hoursTwelve = "0" + hoursTwelve;
+
+        }
+
+        ampm = "PM";
 
     }
 
