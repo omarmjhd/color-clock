@@ -68,7 +68,7 @@ function getLocation() {
 
         }
 
-        $("#address").html(response.city + ", " + response.country);
+        $("#address").html(response.city + ", " + response.region);
 
         var locationLink = "http://www.timeanddate.com/worldclock/" + response.country.toLowerCase()
             + "/" + response.city.toLowerCase();
