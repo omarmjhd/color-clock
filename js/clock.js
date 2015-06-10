@@ -61,7 +61,21 @@ function clock() {
 function getLocation() {
 
     $.get("http://ipinfo.io", function (response) {
+
+        if (response.country == "US") {
+
+            response.country = "USA";
+
+        }
+
         $("#address").html(response.city + ", " + response.country);
+
+        var locationLink = "http://www.timeanddate.com/worldclock/" + response.country.toLowerCase()
+            + "/" + response.city.toLowerCase();
+
+        document.getElementById("time").setAttribute("href", locationLink);
+
     }, "jsonp");
+
 
 }
