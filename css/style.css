@@ -26,6 +26,22 @@
     color: black;
 }
 
+.h3 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    color: white;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+}
+
+.h3:hover {
+    color: black;
+    text-decoration: none;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+}
+
 table {
     position: absolute;
     width: 100vw;

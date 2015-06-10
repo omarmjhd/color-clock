@@ -38,16 +38,30 @@ function clock() {
     minutes.toString();
     seconds.toString(); //update to change it to 12h clock and AM/PM + current City
 
+    getLocation();
+
     var hex = "#" + hours + minutes + seconds;
     var time = hoursTwelve + ":" + minutes + ":" + seconds + " " + ampm;
     var hexLink = "http://www.color-hex.com/color/" + hours + minutes + seconds;
+    var city = document.getElementById("address").innerHTML;
+    var mapLink = "http://maps.google.com/?q=" + city;
 
     document.getElementById("time").innerHTML = time; //setting the time and hex values
     document.getElementById("hex").innerHTML = hex;
-    document.getElementById("hex").setAttribute("href", hexLink); //setting the href to the proper page
+    document.getElementById("hex").setAttribute("href", hexLink); //setting the hrefs to the proper pages
+    document.getElementById("address").setAttribute("href", mapLink);
 
     document.body.style.background = hex;
 
     setTimeout(function() { clock();}, 1000);
+
+}
+
+
+function getLocation() {
+
+    $.get("http://ipinfo.io", function (response) {
+        $("#address").html(response.city + ", " + response.country);
+    }, "jsonp");
 
 }
