@@ -1,4 +1,4 @@
-function clock() {
+function clock() { //TODO: refactor to break down into subfunctions
 
     var date = new Date();
     var hours = date.getHours();
