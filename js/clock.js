@@ -44,18 +44,18 @@ function clock() { //TODO: refactor to break down into subfunctions
     minutes.toString();
     seconds.toString(); //update to change it to 12h clock and AM/PM + current City
 
-    getLocation();
+    //getLocation();
 
     var hex = "#" + hours + minutes + seconds;
     var time = hoursTwelve + ":" + minutes + ":" + seconds + " " + ampm;
     var hexLink = "http://www.color-hex.com/color/" + hours + minutes + seconds;
-    var city = document.getElementById("address").innerHTML;
-    var mapLink = "http://maps.google.com/?q=" + city;
+    //var city = document.getElementById("address").innerHTML;
+    //var mapLink = "http://maps.google.com/?q=" + city;
 
     document.getElementById("time").innerHTML = time; //setting the time and hex values
     document.getElementById("hex").innerHTML = hex;
     document.getElementById("hex").setAttribute("href", hexLink); //setting the hrefs to the proper pages
-    document.getElementById("address").setAttribute("href", mapLink);
+    //document.getElementById("address").setAttribute("href", mapLink);
 
     document.body.style.background = hex;
 
@@ -83,5 +83,15 @@ function getLocation() {
 
     }, "jsonp");
 
+    var city = document.getElementById("address").innerHTML;
+    var mapLink = "http://maps.google.com/?q=" + city;
+    document.getElementById("address").setAttribute("href", mapLink);
+
+}
+
+function contentGenerator() {
+
+    getLocation();
+    clock();
 
 }
